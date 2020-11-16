@@ -1,12 +1,14 @@
 import React from 'react'
 import { Wrapper } from './AppHeader.styles'
 
-function AppHeader () {
+function AppHeader() {
     return <Wrapper>
-        calculadora
+        
+            calculadora
         <span>
-            RPN
+                RPN
         </span>
+        
     </Wrapper>
 }
 
