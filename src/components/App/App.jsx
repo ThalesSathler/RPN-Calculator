@@ -1,19 +1,24 @@
 import React from 'react'
 import AppContainer from '../AppContainer'
 import AppHeader from '../AppHeader'
+import Keyboard from '../Keyboard'
 import { Container, Wrapper } from './App.styles'
+import InfoField from '../InfoFields'
+import { Input } from '../InfoFields/InfoField.styles'
 
 function App() {
     return <Wrapper>
         <Container>
-            <AppHeader/>
-            <AppContainer 
+            <AppHeader />
+            <AppContainer
                 left={<div >
-                    campo + output
+                    <InfoField/>
+                        
                 </div>}
                 right={<div >
-                    input teclado
-                </div>                    
+                    <br/>
+                    <Keyboard />
+                </div>
                 }
             />
         </Container>
