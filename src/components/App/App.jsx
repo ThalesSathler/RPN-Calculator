@@ -3,8 +3,6 @@ import AppContainer from '../AppContainer'
 import AppHeader from '../AppHeader'
 import Keyboard from '../Keyboard'
 import { Container, Wrapper } from './App.styles'
-import InfoField from '../InfoFields'
-import { Input } from '../InfoFields/InfoField.styles'
 
 function App() {
     return <Wrapper>
@@ -12,12 +10,14 @@ function App() {
             <AppHeader />
             <AppContainer
                 left={<div >
-                    <InfoField/>
-                        
-                </div>}
-                right={<div >
-                    <br/>
+                    
                     <Keyboard />
+                </div>}
+
+                right={<div >
+                    <span>
+                        Instruções
+                    </span>
                 </div>
                 }
             />

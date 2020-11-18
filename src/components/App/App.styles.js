@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
     width: 734px;
-    height: 574px;
+    height: auto;
 
     background-color: #FFFFFF;
     
