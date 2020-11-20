@@ -9,15 +9,15 @@ function App() {
         <Container>
             <AppHeader />
             <AppContainer
-                left={<div >
-                    
+                left={
+                <div >    
                     <Keyboard />
                 </div>}
-
-                right={<div >
+                
+                right={
+                <div >
                     <Title>Instruções</Title>
-                </div>
-                }
+                </div>}
             />
         </Container>
     </Wrapper>

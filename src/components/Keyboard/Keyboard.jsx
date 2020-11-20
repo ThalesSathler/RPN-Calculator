@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Wrapper, Button, Teclas, Input, Espaco } from "./Keyboard.styles";
+import { Wrapper, Button, Teclas, Input, Space } from "./Keyboard.styles";
 
 function Keyboard() {
   const [result, setResult] = useState("");
@@ -32,7 +32,7 @@ function Keyboard() {
       ></Input>
 
       <span>Resultado RPN pré-fixa</span>
-      <Input placeholder={"resultado pré-fixa"} disabled={true}></Input>
+      <Input placeholder={"resultado pré-fixa"} ></Input>
 
       <span>Resultado RPN pós-fixa</span>
       <Input placeholder={"resultado pós-fixa"} disabled={true}></Input>
@@ -73,8 +73,8 @@ function Keyboard() {
         <Button name="=" onClick={handleClick}>
           =
         </Button>
-        <Espaco></Espaco>
-        <Espaco></Espaco>
+        <Space></Space>
+        <Space></Space>
         <Button
           name="C"
           onClick={backspace}
