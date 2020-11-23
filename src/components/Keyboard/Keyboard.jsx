@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { Wrapper, Button, Teclas, Input, Space } from "./Keyboard.styles";
+import CalculateNotation from "../../services/prefix"
 
 function Keyboard() {
   const [result, setResult] = useState("");
+  const [preOrder, setPreOrder] = useState("");
+  const [postOrder, setPostOrder] = useState("");
 
   function backspace() {
     if (result.length > 0) setResult(result.slice(0, result.length - 1));
   }
 
   function handleClick(value) {
-    if (result.length < 10) {
+    if (result.length < 20) {
       setResult(result + value.target.name);
       console.log(result.length);
     } else {
@@ -19,6 +22,13 @@ function Keyboard() {
 
   function reset() {
     setResult("");
+  }
+  
+  function calculate(){
+    console.log(result)
+    let resp = CalculateNotation(result)
+    setPreOrder(resp[0])
+    setPostOrder(resp[1])
   }
 
   return (
@@ -32,10 +42,10 @@ function Keyboard() {
       ></Input>
 
       <span>Resultado RPN pré-fixa</span>
-      <Input placeholder={"resultado pré-fixa"} disabled={true}></Input>
+      <Input placeholder={"resultado pré-fixa"} value={preOrder} disabled={true}></Input>
 
       <span>Resultado RPN pós-fixa</span>
-      <Input placeholder={"resultado pós-fixa"} disabled={true}></Input>
+      <Input placeholder={"resultado pós-fixa"} value={postOrder} disabled={true}></Input>
       <Teclas>
         <Button name="P" onClick={handleClick}>
           P
@@ -55,25 +65,24 @@ function Keyboard() {
         <Button name=")" onClick={handleClick}>
           )
         </Button>
-        <Button name="¬" onClick={handleClick}>
+        <Button name="~" onClick={handleClick}>
           ¬
         </Button>
-        <Button name="ʌ" onClick={handleClick}>
+        <Button name="^" onClick={handleClick}>
           ʌ
         </Button>
         <Button name="v" onClick={handleClick}>
           v
         </Button>
-        <Button name="→" onClick={handleClick}>
+        <Button name=">" onClick={handleClick}>
           →
         </Button>
-        <Button name="↔" onClick={handleClick}>
+        <Button name="<" onClick={handleClick}>
           ↔
         </Button>
         <Button name="=" onClick={handleClick}>
           =
         </Button>
-        <Space></Space>
         <Space></Space>
         <Button
           name="C"
@@ -96,6 +105,12 @@ function Keyboard() {
           }}
         >
           Limpar
+        </Button>
+        <Button
+          name="Do Notation"
+          onClick={calculate}
+        >
+          Calcular
         </Button>
       </Teclas>
     </Wrapper>
