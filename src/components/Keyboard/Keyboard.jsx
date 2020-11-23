@@ -32,7 +32,7 @@ function Keyboard() {
       ></Input>
 
       <span>Resultado RPN pré-fixa</span>
-      <Input placeholder={"resultado pré-fixa"} ></Input>
+      <Input placeholder={"resultado pré-fixa"} disabled={true}></Input>
 
       <span>Resultado RPN pós-fixa</span>
       <Input placeholder={"resultado pós-fixa"} disabled={true}></Input>
