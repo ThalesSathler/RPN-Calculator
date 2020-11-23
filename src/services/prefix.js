@@ -111,4 +111,4 @@ function doNotation(formula){
   return notPolonesa(formula)   
 }
 
-module.exports = doNotation
+export default doNotation
